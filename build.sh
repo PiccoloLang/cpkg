@@ -1,7 +1,7 @@
 mkdir -p build
 cd build
 cmake ..
-make
+cmake --build . --target all
 cd ..
 mkdir -p dll
 mv build/liblib.dylib dll &
