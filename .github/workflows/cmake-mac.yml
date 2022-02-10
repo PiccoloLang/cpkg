@@ -34,7 +34,7 @@ jobs:
     
     - name: Move dylib
       run: |
-        mkdir dll
+        mkdir -p dll
         mv build/liblib.dylib dll
     
     - uses: stefanzweifel/git-auto-commit-action@v4
