@@ -30,4 +30,14 @@ jobs:
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}      
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+    
+    - name: Move dylib
+      run: |
+        mkdir dll
+        mv build/liblib.dylib dll
+    
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Built Mac dylib
+        
