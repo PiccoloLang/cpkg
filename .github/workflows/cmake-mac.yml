@@ -35,7 +35,6 @@ jobs:
     - name: Move dylib
       run: |
         mkdir -p dll
-        rm dll/liblib.dylib
         mv build/liblib.dylib dll
         git add .
     
